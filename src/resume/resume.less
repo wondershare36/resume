@@ -1,0 +1,303 @@
+@import "../../iconfont/iconfont.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  padding: 60px 0;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 5px;
+  border: 1px solid #00b38a;
+  border-radius: 3px;
+  font-family: Menlo, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  height: 20px !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  margin: 2px 0;
+  text-align: center;
+  color: #00b38a;
+
+  &:hover {
+    background-color: #00b38a;
+    color: #fff;
+  }
+}
+
+.content {
+  width: 1024px;
+  height: 1582px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 5px;
+}
+
+.content-hd {
+  color: white;
+  background-color: #00b38a;
+  padding: 30px 50px;
+}
+
+.content-hd ul a:hover {
+  opacity: 0.8;
+}
+
+section.title {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #00a982;
+  margin-bottom: 10px;
+
+  .name {
+    float: left;
+    width: 50%;
+
+    h1 {
+      font-size: 52px;
+      letter-spacing: 5px;
+
+      small {
+        margin-left: 5px;
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  .job {
+    height: inherit;
+    float: right;
+    width: 50%;
+    text-align: right;
+
+    h2 {
+      font-weight: 300;
+      font-size: 24px;
+      display: inline-block;
+    }
+  }
+}
+
+section.info {
+  float: left;
+  width: 50%;
+  font-size: 16px;
+  line-height: 34px;
+}
+
+section.contact {
+  text-align: right;
+  float: right;
+  width: 50%;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    padding-top: 0;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .content-hd {
+    padding: 25px;
+  }
+
+  section.title {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #00a982;
+    font-size: 52px;
+    overflow: hidden;
+
+    .name {
+      text-align: center;
+      width: 100%;
+
+      small {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .job {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  section.info {
+    width: 100%;
+    text-align: center;
+  }
+
+  section.contact {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+
+    li {
+      margin-left: 20px;
+      display: inline-block;
+    }
+
+    li span {
+      display: none;
+    }
+
+    li i {
+      font-size: 35px;
+    }
+
+  }
+}
+
+/* body */
+.content-bd {
+  padding: 18px 30px 50px;
+  color: #333;
+  .content-left,
+  .content-right {
+    padding: 15px 20px;
+    width: 50%;
+  }
+  .content-left {
+    float: left;
+  }
+
+  .content-right {
+    float: right;
+  }
+}
+
+.content-bd .content-bd section {
+  padding: 10px 18px;
+}
+
+.section-header {
+  position: relative;
+
+  .section-title-l,
+  .section-title-r {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 0;
+    border-top: 1px solid #ededed;
+    vertical-align: middle;
+  }
+
+  .section-title-l {
+    left: 0;
+  }
+
+  .section-title-r {
+    right: 0;
+  }
+
+  .section-title {
+    position: relative;
+    z-index: 1;
+    width: 24%;
+    min-width: 100px;
+    margin: 0 auto;
+    padding: 4px 10px;
+    border-radius: 32px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #eee;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .content-bd {
+
+    .content-left,
+    .content-right {
+      width: 100%;
+    }
+  }
+
+}
+
+.content-bd .iconfont {
+  color: #00a982;
+}
+
+.content-bd .item-hd {
+  position: relative;
+  padding: 8px 0 5px;
+  font-weight: 500;
+  line-height: 22px;
+  overflow: hidden;
+
+  .item-time {
+    float: left;
+    display: inline-block;
+    font-size: 14px;
+    width: 155px;
+  }
+
+  .item-name {
+    float: left;
+    display: inline-block;
+  }
+
+  .item-more {
+    float: right;
+    height: 22px;
+    line-height: 22px;
+    margin-left: 5px;
+  }
+
+}
