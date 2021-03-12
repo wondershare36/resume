@@ -35,6 +35,23 @@ ol {
   list-style: none;
 }
 
+strong {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 500;
+  color: #494949;
+  margin: 0 3px;
+  padding: 3px 8px;
+  background-color: #F6F6F6;
+  border-radius: 2px;
+  border: 1px solid rgb(235, 235, 235);
+}
+
+strong:hover {
+  background-color: #ddd;
+}
+
 body {
   padding: 60px 0;
   background-color: #ddd;
@@ -43,8 +60,8 @@ body {
   align-items: center;
 }
 
-.clearfix::after {
-  content: "";
+.clearfix::after{
+  content: '';
   display: block;
   clear: both;
 }
@@ -70,7 +87,7 @@ body {
 
 .content {
   width: 1024px;
-  height: 1582px;
+  // min-height: 1582px;
   background-color: #fff;
   box-shadow: 0 0 5px #ccc;
   border-radius: 5px;
@@ -157,7 +174,6 @@ section.contact {
     margin-bottom: 5px;
     border-bottom: 2px solid #00a982;
     font-size: 52px;
-    overflow: hidden;
 
     .name {
       text-align: center;
@@ -203,13 +219,15 @@ section.contact {
 
 /* body */
 .content-bd {
-  padding: 18px 30px 50px;
+  padding: 8px 30px 50px;
   color: #333;
+
   .content-left,
   .content-right {
     padding: 15px 20px;
     width: 50%;
   }
+
   .content-left {
     float: left;
   }
@@ -221,6 +239,7 @@ section.contact {
 
 .content-bd .content-bd section {
   padding: 10px 18px;
+
 }
 
 .section-header {
@@ -256,6 +275,10 @@ section.contact {
     font-size: 16px;
     text-align: center;
     background-color: #eee;
+
+    &:hover {
+      background-color: #ddd;
+    }
   }
 }
 
@@ -270,22 +293,35 @@ section.contact {
 
 }
 
+// 内容ui
 .content-bd .iconfont {
   color: #00a982;
 }
 
-.content-bd .item-hd {
+.section-body {
   position: relative;
-  padding: 8px 0 5px;
-  font-weight: 500;
-  line-height: 22px;
+}
+
+.content-bd {
   overflow: hidden;
+  .item-hd {
+    position: relative;
+    padding: 8px 0 5px;
+    font-weight: 500;
+    line-height: 32px;
+    overflow: hidden;
+  }
+
+  .item-stage {
+    color: #666;
+    font-size: 13px;
+  }
 
   .item-time {
     float: left;
     display: inline-block;
     font-size: 14px;
-    width: 155px;
+    min-width: 145px;
   }
 
   .item-name {
@@ -299,5 +335,63 @@ section.contact {
     line-height: 22px;
     margin-left: 5px;
   }
+ 
+  .item-qr {
+    margin-bottom: -80px;
+    .item-qr-hd{
+      float: left;
+      position: relative;
+      padding: 8px 0 5px;
+      font-weight: 500;
+      line-height: 32px;
+    }
+    .item-qr-code{
+      float: right;
+      img {
+        width: 80px;
+      }
+  
+      .qr-link {
+        text-align: center;
+        color: #aaa;
+        display: block;
+      }
+  
+      .qr-link:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
 
+}
+
+// 实践经历
+#experience,
+#award {
+  margin-top: 30px;
+}
+
+.content-bd .section-header {
+  margin: 20px 0;
+}
+
+#award .item-time {
+  min-width: 70px;
+}
+
+.icon-link {
+  padding: 10px;
+  font-size: 22px;
+}
+
+.icon-link:hover {
+  background-color: #ddd;
+}
+
+.works-item{
+  margin-top: 40px;
+}
+.works-item:first-child{
+  margin-top: 0px;
 }
