@@ -1,4 +1,4 @@
-@import "../../iconfont/iconfont.css";
+@import "iconfont/iconfont.css";
 
 * {
   box-sizing: border-box;
@@ -53,19 +53,27 @@ strong:hover {
   background-color: #ddd;
 }
 
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50px;
+}
+
+
 body {
-  padding: 60px 0;
-  background-color: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  padding-top: 60px ;
+  padding-bottom: 20px;
+  background-color: #eee;
 }
 
 .pdf {
   display: inline-block;
   position: fixed;
-  z-index: 10;
+  // z-index: 10;
   bottom: 6px;
   left: 50%;
   margin-left: 520px;
@@ -75,11 +83,18 @@ body {
   line-height: 26px;
   color: #fff;
   background-color: #00b38a;
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  -webkit-animation: fade 1.6s;
   animation: fade 1.6s;
 }
+
+@media screen and (max-width: 1246px) {
+  .pdf {
+    left: auto;
+    right: 8px;
+    margin-left: 0;
+  }
+}
+
 
 .clearfix::after {
   content: '';
@@ -113,6 +128,8 @@ body {
   box-shadow: 0 0 5px #ccc;
   border-radius: 10px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-hd {
@@ -177,9 +194,7 @@ section.contact {
 }
 
 @media only screen and (max-width: 720px) {
-  body {
-    padding-top: 0;
-  }
+  
 
   .content {
     width: 100%;
@@ -191,7 +206,7 @@ section.contact {
     padding: 25px;
   }
 
-  
+
 }
 
 section.title {
@@ -239,7 +254,6 @@ section.contact {
     font-size: 35px;
   }
 
-}
 }
 
 /* body */
@@ -313,6 +327,13 @@ section.contact {
 }
 
 @media screen and (max-width:1024px) {
+  body {
+    padding-top: 0;
+  }
+  .content{
+    border-radius: 0;
+    width: 100%;
+  }
   .content-bd {
 
     .content-left,
@@ -444,4 +465,25 @@ section.contact {
 
 .works-item:first-child {
   margin-top: 0px;
+}
+footer{
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+footer .footer-link {
+  display: inline-block;
+  // vertical-align: top;
+  color: #aaa;
+  &:hover{
+    background-color: rgb(230, 230, 230);
+  }
+  .iconfont{
+    vertical-align: middle;
+    margin-right: 2px;
+    padding: 0px;
+    &:hover{
+      background-color: initial;
+    }
+  }
 }
