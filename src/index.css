@@ -54,7 +54,7 @@ strong:hover {
   border-radius: 50px;
 }
 body {
-  padding-top: 60px ;
+  padding-top: 60px;
   padding-bottom: 20px;
   background-color: #eee;
 }
@@ -72,13 +72,6 @@ body {
   background-color: #00b38a;
   transition: all 0.2s ease-in-out;
   animation: fade 1.6s;
-}
-@media screen and (max-width: 1246px) {
-  .pdf {
-    left: auto;
-    right: 8px;
-    margin-left: 0;
-  }
 }
 .clearfix::after {
   content: '';
@@ -162,53 +155,6 @@ section.contact {
   font-size: 15px;
   line-height: 25px;
 }
-@media only screen and (max-width: 720px) {
-  .content {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-  .content-hd {
-    padding: 25px;
-  }
-}
-section.title {
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-  border-bottom: 2px solid #00a982;
-  font-size: 52px;
-}
-section.title .name {
-  text-align: center;
-  width: 100%;
-}
-section.title .name small {
-  display: block;
-  width: 100%;
-}
-section.title .job {
-  width: 100%;
-  text-align: center;
-}
-section.info {
-  width: 100%;
-  text-align: center;
-}
-section.contact {
-  margin-top: 20px;
-  width: 100%;
-  text-align: center;
-}
-section.contact li {
-  margin-left: 20px;
-  display: inline-block;
-}
-section.contact li span {
-  display: none;
-}
-section.contact li i {
-  font-size: 35px;
-}
 /* body */
 .content-bd {
   padding: 8px 30px 50px;
@@ -266,19 +212,6 @@ section.contact li i {
 }
 .section-header .section-title:hover {
   background-color: #ddd;
-}
-@media screen and (max-width: 1024px) {
-  body {
-    padding-top: 0;
-  }
-  .content {
-    border-radius: 0;
-    width: 100%;
-  }
-  .content-bd .content-left,
-  .content-bd .content-right {
-    width: 100%;
-  }
 }
 .content-bd .iconfont {
   color: #00a982;
@@ -394,4 +327,77 @@ footer .footer-link .iconfont {
 }
 footer .footer-link .iconfont:hover {
   background-color: initial;
+}
+@media screen and (max-width: 1024px) {
+  body {
+    padding-top: 0;
+  }
+  .content {
+    border-radius: 0;
+    width: 100%;
+  }
+  .content-bd .content-left,
+  .content-bd .content-right {
+    width: 100%;
+  }
+  section.info {
+    width: 100%;
+    text-align: center;
+  }
+  section.contact {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  section.contact li {
+    margin-left: 20px;
+    display: inline-block;
+  }
+  section.contact li span {
+    display: none;
+  }
+  section.contact li i {
+    font-size: 35px;
+  }
+  section.title {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #00a982;
+    font-size: 52px;
+  }
+  section.title .name {
+    text-align: center;
+    width: 100%;
+  }
+  section.title .name small {
+    display: block;
+    width: 100%;
+  }
+  section.title .job {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1246px) {
+  .pdf {
+    left: auto;
+    right: 8px;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 720px) {
+  strong {
+    padding: 1px 2px;
+  }
+  .content-bd {
+    padding: 5px  ;
+  }
+  .content {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .content-hd {
+    padding: 25px;
+  }
 }
