@@ -7,6 +7,7 @@
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
+  transition: all 0.1s;
 }
 *::after,
 *::before {
@@ -38,7 +39,7 @@ strong {
   margin: 0 3px;
   padding: 3px 8px;
   background-color: #F6F6F6;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid #ebebeb;
 }
 strong:hover {
@@ -77,14 +78,15 @@ body {
   width: 1024px;
   background-color: #fff;
   box-shadow: 0 0 5px #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .content-hd {
   color: white;
   background-color: #00b38a;
   padding: 30px 50px;
 }
-.content-hd ul a:hover {
+.content-hd a:hover {
   opacity: 0.8;
 }
 section.title {
@@ -183,7 +185,7 @@ section.contact {
 /* body */
 .content-bd {
   padding: 8px 30px 50px;
-  color: #333;
+  color: #444;
 }
 .content-bd .content-left,
 .content-bd .content-right {
@@ -211,6 +213,11 @@ section.contact {
   height: 0;
   border-top: 1px solid #ededed;
   vertical-align: middle;
+}
+.section-header .section-title-l:hover,
+.section-header .section-title-r:hover {
+  transform: scale(1.2);
+  background-color: #ddd;
 }
 .section-header .section-title-l {
   left: 0;
@@ -255,6 +262,10 @@ section.contact {
   line-height: 32px;
   overflow: hidden;
 }
+.content-bd .item-hd:hover {
+  color: #222;
+  background-color: #fafafa;
+}
 .content-bd .item-stage {
   color: #666;
   font-size: 13px;
@@ -263,7 +274,8 @@ section.contact {
   float: left;
   display: inline-block;
   font-size: 14px;
-  min-width: 145px;
+  min-width: 125px;
+  margin-right: 5px;
 }
 .content-bd .item-name {
   float: left;
@@ -273,7 +285,6 @@ section.contact {
   float: right;
   height: 22px;
   line-height: 22px;
-  margin-left: 5px;
 }
 .content-bd .item-qr {
   margin-bottom: -80px;
@@ -290,6 +301,9 @@ section.contact {
 }
 .content-bd .item-qr .item-qr-code img {
   width: 80px;
+}
+.content-bd .item-qr .item-qr-code img:hover {
+  transform: scale(1.05);
 }
 .content-bd .item-qr .item-qr-code .qr-link {
   text-align: center;
@@ -308,9 +322,13 @@ section.contact {
   margin: 20px 0;
 }
 #award .item-time {
-  min-width: 70px;
+  min-width: 50px;
+}
+#award .item-more {
+  float: right;
 }
 .icon-link {
+  border-radius: 5px;
   padding: 10px;
   font-size: 22px;
 }

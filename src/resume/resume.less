@@ -8,6 +8,7 @@
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
+  transition: all 0.1s;
 }
 
 *::after,
@@ -44,7 +45,7 @@ strong {
   margin: 0 3px;
   padding: 3px 8px;
   background-color: #F6F6F6;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid rgb(235, 235, 235);
 }
 
@@ -58,9 +59,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
-.clearfix::after{
+.pdf {
+  display: inline-block;
+  position: fixed;
+  z-index: 10;
+  bottom: 6px;
+  left: 50%;
+  margin-left: 520px;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #fff;
+  background-color: #00b38a;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  -webkit-animation: fade 1.6s;
+  animation: fade 1.6s;
+}
+
+.clearfix::after {
   content: '';
   display: block;
   clear: both;
@@ -90,7 +111,8 @@ body {
   // min-height: 1582px;
   background-color: #fff;
   box-shadow: 0 0 5px #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .content-hd {
@@ -99,7 +121,7 @@ body {
   padding: 30px 50px;
 }
 
-.content-hd ul a:hover {
+.content-hd a:hover {
   opacity: 0.8;
 }
 
@@ -169,58 +191,61 @@ section.contact {
     padding: 25px;
   }
 
-  section.title {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid #00a982;
-    font-size: 52px;
+  
+}
 
-    .name {
-      text-align: center;
+section.title {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid #00a982;
+  font-size: 52px;
+
+  .name {
+    text-align: center;
+    width: 100%;
+
+    small {
+      display: block;
       width: 100%;
-
-      small {
-        display: block;
-        width: 100%;
-      }
-    }
-
-    .job {
-      width: 100%;
-      text-align: center;
     }
   }
 
-  section.info {
+  .job {
     width: 100%;
     text-align: center;
   }
+}
 
-  section.contact {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
+section.info {
+  width: 100%;
+  text-align: center;
+}
 
-    li {
-      margin-left: 20px;
-      display: inline-block;
-    }
+section.contact {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
 
-    li span {
-      display: none;
-    }
-
-    li i {
-      font-size: 35px;
-    }
-
+  li {
+    margin-left: 20px;
+    display: inline-block;
   }
+
+  li span {
+    display: none;
+  }
+
+  li i {
+    font-size: 35px;
+  }
+
+}
 }
 
 /* body */
 .content-bd {
   padding: 8px 30px 50px;
-  color: #333;
+  color: #444;
 
   .content-left,
   .content-right {
@@ -254,6 +279,11 @@ section.contact {
     height: 0;
     border-top: 1px solid #ededed;
     vertical-align: middle;
+
+    &:hover {
+      transform: scale(1.2);
+      background-color: #ddd;
+    }
   }
 
   .section-title-l {
@@ -304,12 +334,18 @@ section.contact {
 
 .content-bd {
   overflow: hidden;
+
   .item-hd {
     position: relative;
     padding: 8px 0 5px;
     font-weight: 500;
     line-height: 32px;
     overflow: hidden;
+
+    &:hover {
+      color: #222;
+      background-color: rgb(250, 250, 250);
+    }
   }
 
   .item-stage {
@@ -321,7 +357,8 @@ section.contact {
     float: left;
     display: inline-block;
     font-size: 14px;
-    min-width: 145px;
+    min-width: 125px;
+    margin-right: 5px;
   }
 
   .item-name {
@@ -333,30 +370,37 @@ section.contact {
     float: right;
     height: 22px;
     line-height: 22px;
-    margin-left: 5px;
   }
- 
+
   .item-qr {
     margin-bottom: -80px;
-    .item-qr-hd{
+
+    .item-qr-hd {
       float: left;
       position: relative;
       padding: 8px 0 5px;
       font-weight: 500;
       line-height: 32px;
     }
-    .item-qr-code{
+
+    .item-qr-code {
       float: right;
+
       img {
         width: 80px;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
-  
+
       .qr-link {
+
         text-align: center;
         color: #aaa;
         display: block;
       }
-  
+
       .qr-link:hover {
         color: #333;
         text-decoration: underline;
@@ -377,10 +421,15 @@ section.contact {
 }
 
 #award .item-time {
-  min-width: 70px;
+  min-width: 50px;
+}
+
+#award .item-more {
+  float: right;
 }
 
 .icon-link {
+  border-radius: 5px;
   padding: 10px;
   font-size: 22px;
 }
@@ -389,9 +438,10 @@ section.contact {
   background-color: #ddd;
 }
 
-.works-item{
+.works-item {
   margin-top: 40px;
 }
-.works-item:first-child{
+
+.works-item:first-child {
   margin-top: 0px;
 }
