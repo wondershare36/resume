@@ -30,6 +30,9 @@ ul,
 ol {
   list-style: none;
 }
+img {
+  width: 100%;
+}
 strong {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
   font-size: 13px;
@@ -37,7 +40,7 @@ strong {
   font-weight: 500;
   color: #494949;
   margin: 0 3px;
-  padding: 3px 8px;
+  padding: 2px 3px;
   background-color: #F6F6F6;
   border-radius: 5px;
   border: 1px solid #ebebeb;
@@ -58,20 +61,32 @@ body {
   padding-bottom: 20px;
   background-color: #eee;
 }
-.pdf {
+.btn2 {
   display: inline-block;
-  position: fixed;
-  bottom: 6px;
-  left: 50%;
-  margin-left: 520px;
+  transition: all 0.2s ease-in-out;
+  animation: fade 1.6s;
   padding: 0 8px;
   border-radius: 3px;
   font-size: 16px;
   line-height: 26px;
   color: #fff;
   background-color: #00b38a;
-  transition: all 0.2s ease-in-out;
-  animation: fade 1.6s;
+}
+.onEdit {
+  background-color: #ddd;
+  color: #666;
+}
+.edit {
+  margin-top: 10px;
+}
+.pdf {
+  margin-right: 10px;
+}
+.btn_wrap {
+  margin-left: 520px;
+  position: fixed;
+  bottom: 6px;
+  left: 50%;
 }
 .clearfix::after {
   content: '';
@@ -104,6 +119,9 @@ body {
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+}
+.link {
+  display: none;
 }
 .content-hd {
   color: white;
@@ -142,6 +160,15 @@ section.title .job h2 {
   font-weight: 300;
   font-size: 24px;
   display: inline-block;
+}
+section.title .job .avartor {
+  margin-left: 10px;
+  opacity: 0.9;
+  position: relative;
+  top: 10px;
+  width: 60px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 section.info {
   float: left;
@@ -223,33 +250,35 @@ section.contact {
 .content-bd {
   overflow: hidden;
 }
-.content-bd .item-hd {
-  position: relative;
-  padding: 0px 0 ;
-  margin: 5px 0;
-  font-weight: 500;
+.content-bd .section-content {
   line-height: 35px;
+  color: #777;
+}
+.content-bd .item-hd {
   overflow: hidden;
+  position: relative;
+  padding: 0px 0;
+  font-weight: 500;
 }
 .content-bd .item-hd:hover {
   color: #222;
   background-color: #fafafa;
   transform: scale(1.005);
 }
+.content-bd .item-name {
+  float: left;
+  display: inline-block;
+  line-height: 35px;
+}
 .content-bd .item-stage {
   color: #666;
   font-size: 13px;
 }
 .content-bd .item-time {
-  float: left;
+  color: #777;
+  float: right;
   display: inline-block;
   font-size: 14px;
-  min-width: 125px;
-  margin-right: 5px;
-}
-.content-bd .item-name {
-  float: left;
-  display: inline-block;
 }
 .content-bd .item-more {
   float: right;
@@ -283,18 +312,34 @@ section.contact {
   color: #333;
   text-decoration: underline;
 }
-#experience,
-#award {
-  margin-top: 30px;
-}
 .content-bd .section-header {
   margin: 20px 0;
 }
+#experience,
+#award {
+  margin-top: 60px;
+}
+#experience .item-more {
+  position: relative;
+  top: 5px;
+  float: left;
+  margin-left: 5px;
+}
+#experience .item-time {
+  position: relative;
+  top: 8px;
+}
 #award .item-time {
-  min-width: 50px;
+  position: relative;
+  top: 8px;
 }
 #award .item-more {
   float: right;
+}
+#works .item-name,
+#experience .item-name,
+#award .item-name {
+  font-weight: 700;
 }
 .icon-link {
   border-radius: 5px;
@@ -333,6 +378,9 @@ footer .footer-link .iconfont:hover {
 @media screen and (max-width: 1024px) {
   body {
     padding-top: 0;
+  }
+  .avartor {
+    display: none;
   }
   .content {
     border-radius: 0;
@@ -380,11 +428,14 @@ footer .footer-link .iconfont:hover {
     text-align: center;
   }
 }
-@media screen and (max-width: 1246px) {
-  .pdf {
+@media screen and (max-width: 1260px) {
+  .btn_wrap {
     left: auto;
     right: 8px;
     margin-left: 0;
+  }
+  .edit {
+    display: none;
   }
 }
 @media only screen and (max-width: 720px) {
@@ -392,7 +443,7 @@ footer .footer-link .iconfont:hover {
     padding: 1px 2px;
   }
   .content-bd {
-    padding: 5px  ;
+    padding: 5px;
   }
   .content {
     width: 100%;

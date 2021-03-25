@@ -35,6 +35,9 @@ ul,
 ol {
   list-style: none;
 }
+img{
+  width: 100%;
+}
 
 strong {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
@@ -43,7 +46,7 @@ strong {
   font-weight: 500;
   color: #494949;
   margin: 0 3px;
-  padding: 3px 8px;
+  padding: 2px 3px;
   background-color: #F6F6F6;
   border-radius: 5px;
   border: 1px solid rgb(235, 235, 235);
@@ -70,21 +73,32 @@ body {
   background-color: #eee;
 }
 
-.pdf {
+.btn2{
   display: inline-block;
-  position: fixed;
-  // z-index: 10;
-  bottom: 6px;
-  left: 50%;
-  margin-left: 520px;
+  transition: all .2s ease-in-out;
+  animation: fade 1.6s; 
   padding: 0 8px;
   border-radius: 3px;
   font-size: 16px;
   line-height: 26px;
   color: #fff;
   background-color: #00b38a;
-  transition: all .2s ease-in-out;
-  animation: fade 1.6s;
+}
+.onEdit{
+  background-color: #ddd;
+  color: #666;
+}
+.edit{
+  margin-top: 10px;
+}
+.pdf{
+  margin-right: 10px;
+}
+.btn_wrap {
+  margin-left: 520px;
+  position: fixed;
+  bottom: 6px;
+  left: 50%;
 }
 
 
@@ -125,8 +139,11 @@ body {
   overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+  
 }
-
+.link {
+   display: none;
+}
 .content-hd {
   color: white;
   background-color: #00b38a;
@@ -143,10 +160,12 @@ section.title {
   margin-bottom: 10px;
 
   .name {
+   
     float: left;
     width: 50%;
 
     h1 {
+     
       font-size: 52px;
       letter-spacing: 5px;
 
@@ -169,6 +188,15 @@ section.title {
       font-weight: 300;
       font-size: 24px;
       display: inline-block;
+    }
+    .avartor{
+      margin-left: 10px;
+      opacity: 0.9;
+      position: relative;
+      top: 10px;
+      width: 60px;
+      overflow: hidden;
+      border-radius: 50%;
     }
   }
 }
@@ -272,14 +300,16 @@ section.contact {
 .content-bd {
   overflow: hidden;
 
-  .item-hd {
-    position: relative;
-    padding: 0px 0 ;
-    margin: 5px 0;
-    font-weight: 500;
+  .section-content {
     line-height: 35px;
-    overflow: hidden;
+    color: #777;
+  }
 
+  .item-hd {
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0;
+    font-weight: 500;
     &:hover {
       color: #222;
       background-color: rgb(250, 250, 250);
@@ -287,23 +317,25 @@ section.contact {
     }
   }
 
+  .item-name {
+    float: left;
+    display: inline-block;
+    line-height: 35px;
+  }
+
+
   .item-stage {
     color: #666;
     font-size: 13px;
   }
 
   .item-time {
-    float: left;
+    color: #777;
+    float: right;
     display: inline-block;
     font-size: 14px;
-    min-width: 125px;
-    margin-right: 5px;
-  }
+}
 
-  .item-name {
-    float: left;
-    display: inline-block;
-  }
 
   .item-more {
     float: right;
@@ -348,22 +380,45 @@ section.contact {
 
 }
 
-// 实践经历
-#experience,
-#award {
-  margin-top: 30px;
-}
-
 .content-bd .section-header {
   margin: 20px 0;
 }
 
-#award .item-time {
-  min-width: 50px;
+// 实践经历
+#experience,
+#award {
+  margin-top: 60px;
 }
 
-#award .item-more {
-  float: right;
+#experience{
+  .item-more{
+    position: relative;
+    top: 5px;
+    float: left;
+    margin-left: 5px;
+  }
+  .item-time{
+    position: relative;
+    top: 8px;
+  }
+}
+
+#award {
+  .item-time{
+    position: relative;
+    top: 8px;
+  }
+  .item-more {
+    float: right;
+  }
+}
+
+#works,
+#experience,
+#award {
+  .item-name {
+    font-weight: 700;
+  }
 }
 
 .icon-link {
@@ -414,7 +469,9 @@ footer .footer-link {
   body {
     padding-top: 0;
   }
-
+  .avartor{
+    display: none;
+  }
   .content {
     border-radius: 0;
     width: 100%;
@@ -432,25 +489,27 @@ footer .footer-link {
     width: 100%;
     text-align: center;
   }
+
   section.contact {
     margin-top: 20px;
     width: 100%;
     text-align: center;
-  
+
     li {
       margin-left: 20px;
       display: inline-block;
     }
-  
+
     li span {
       display: none;
     }
-  
+
     li i {
       font-size: 35px;
     }
-  
+
   }
+
   section.title {
     padding-bottom: 5px;
     margin-bottom: 5px;
@@ -474,20 +533,24 @@ footer .footer-link {
   }
 }
 
-@media screen and (max-width: 1246px) {
-  .pdf {
+@media screen and (max-width: 1260px) {
+  .btn_wrap {
     left: auto;
     right: 8px;
     margin-left: 0;
   }
+  .edit{
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 720px) {
-  strong{
+  strong {
     padding: 1px 2px;
   }
-  .content-bd{
-    padding:5px  ;
+
+  .content-bd {
+    padding: 5px;
   }
 
   .content {
@@ -502,5 +565,3 @@ footer .footer-link {
 
 
 }
-
-
