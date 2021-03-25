@@ -269,7 +269,7 @@ section.contact {
   float: right;
 }
 .content-bd .item-qr .item-qr-code img {
-  width: 80px;
+  width: 90px;
 }
 .content-bd .item-qr .item-qr-code img:hover {
   transform: scale(1.3);
